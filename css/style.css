@@ -1,0 +1,306 @@
+/*****************************************************************************/
+/** FONTS **/
+/*****************************************************************************/
+
+@font-face {
+    font-family: 'Futura Round';
+    src: url('../fonts/FuturaRound/FuturaRound-SemiBoldItalic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'HalisGR';
+    src: url('../fonts/HalisGR/HalisGR-Bold.otf') format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'DTJakob';
+    src: url('../fonts/DTJakob/DTJakob-SemiBoldItalic.otf') format('truetype');
+    font-style: italic;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+/*****************************************************************************/
+/** COLORS **/
+/*****************************************************************************/
+
+html {
+    --primary-color: #24424F;
+    --secondary-color: #EF8E86;
+
+    --background-primary-color: var(--primary-color);
+    --background-secondary-color-1: var(--secondary-color);
+    --background-secondary-color-2: #F5C5B7;
+    --background-tertiary-color: #ECF2F1;
+
+    --button-background-primary-color: rgba(255, 255, 255, 0.75);
+
+    --logo-primary-color: white;
+    --logo-secondary-color: red;
+    --logo-tertiary-color: cyan;
+
+    --paragraphs-primary-color: #BCC6C9;
+}
+
+.bg-primary {
+    background-color: var(--background-primary-color);
+}
+
+.bg-secondary {
+    background: linear-gradient(var(--background-secondary-color-1), var(--background-secondary-color-2));
+}
+
+.bg-tertiary {
+    background-color: var(--background-tertiary-color);
+}
+
+/*****************************************************************************/
+/** INITIAL SETUP **/
+/*****************************************************************************/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*****************************************************************************/
+/** FLEXBOX **/
+/*****************************************************************************/
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+/*****************************************************************************/
+/** GLOBAL CONTAINERS **/
+/*****************************************************************************/
+
+.section {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    width: 70%;
+    height: 100vh;
+}
+
+/*****************************************************************************/
+/** GLOBAL ELEMENTS **/
+/*****************************************************************************/
+
+.logo {
+    position: relative;
+    width: 190px;
+}
+
+.logo-1 {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    font-size: 50px;
+    color: var(--logo-primary-color);
+    font-family: 'Futura Round';
+    font-style: italic;
+    font-weight: 600;
+    transform: rotate(-5deg);
+}
+
+.logo-2 {
+    position: absolute;
+    top: 12px;
+    left: -3px;
+    font-size: 50px;
+    color: transparent;
+    -webkit-text-stroke: 0.4px var(--logo-secondary-color);
+    font-family: 'Futura Round';
+    font-style: italic;
+    font-weight: 600;
+    transform: rotate(-5deg);
+}
+
+.logo-3 {
+    position: absolute;
+    top: 18px;
+    left: 3px;
+    font-size: 50px;
+    color: transparent;
+    -webkit-text-stroke: 0.1px var(--logo-tertiary-color);
+    font-family: 'Futura Round';
+    font-style: italic;
+    font-weight: 600;
+    transform: rotate(-5deg);
+}
+
+.button {
+    position: relative;
+    width: 200px;
+    padding: 15px 30px;
+    background-color: var(--button-background-primary-color);
+    border-radius: 3px;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    width: 30px;
+    height: 6px;
+    background-color: var(--button-background-primary-color);
+    border-radius: 2px;
+}
+
+.button::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: -20px;
+    width: 40px;
+    height: 6px;
+    background-color: var(--button-background-primary-color);
+    border-radius: 2px;
+}
+
+.button .text {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'HalisGR';
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/*****************************************************************************/
+/** SECTION 1 **/
+/*****************************************************************************/
+
+.section1 .container-body-left {
+    width: 65%;
+}
+
+.section1 .container-body-right {
+    width: 35%;
+}
+
+.section1 .title-section {
+    position: relative;
+    width: 750px;
+    height: 210px;
+}
+
+.section1 .title-section-1 {
+    position: absolute;
+    top: -70px;
+    left: 0px;
+    font-size: 130px;
+    color: white;
+    font-family: 'DTJakob';
+    font-style: italic;
+    font-weight: 600;
+}
+
+.section1 .title-section-2 {
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    font-size: 130px;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--secondary-color);
+    font-family: 'DTJakob';
+    font-style: italic;
+    font-weight: 600;
+}
+
+.section1 p {
+    width: 50%;
+    color: var(--paragraphs-primary-color);
+    font-family: 'Poppins';
+    font-weight: 200;
+    margin: 30px 0px;
+}
+
+.section1 .button .text {
+    color: var(--background-primary-color);
+}
+
+.img-poison{
+    width: 100%;
+    height: 50%;
+    margin: 50px 0px;
+    background-image: url(../img/poison.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.disclaimer {
+    margin: 30px 0px;
+    font-size: 12px;
+    color: var(--paragraphs-primary-color);
+    font-family: 'Poppins';
+    font-weight: 400;
+    text-align: end;
+}
+
+/*****************************************************************************/
+/** SECTION 2 **/
+/*****************************************************************************/
+
+
+/*****************************************************************************/
+/** SECTION 3 **/
+/*****************************************************************************/
+
+
+/*****************************************************************************/
+/** FOOTER **/
+/*****************************************************************************/
+
+footer {
+    width: 100%;
+    height: 25vh;
+}
