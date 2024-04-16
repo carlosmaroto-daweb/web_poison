@@ -37,6 +37,13 @@
     font-weight: 400;
 }
 
+@font-face {
+    font-family: 'CintaBook';
+    src: url('../fonts/CintaBook/CintaBook-RegularItalic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 400;
+}
+
 /*****************************************************************************/
 /** COLORS **/
 /*****************************************************************************/
@@ -310,16 +317,12 @@ footer {
 }
 
 footer .container {
+    width: 80%;
     height: 25vh;
 }
 
 footer .container-body-left {
     width: 70%;
-    height: 25vh;
-}
-
-footer .container-body-right {
-    width: 30%;
 }
 
 footer .logo {
@@ -343,4 +346,26 @@ footer .logo-3 {
     top: 5px;
     left: 5px;
     font-size: 60px;
+}
+
+footer .container-body-right {
+    width: 30%;
+}
+
+.vertical-line {
+    height: 15vh;
+    border-left: 1px solid var(--paragraphs-primary-color);
+}
+
+footer .links {
+    width: 100%;
+}
+
+footer .links, footer a {
+    font-size: 16px;
+    color: var(--paragraphs-primary-color);
+    font-family: 'CintaBook';
+    font-style: italic;
+    font-weight: 400;
+    text-align: end;
 }
