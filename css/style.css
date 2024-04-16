@@ -58,12 +58,16 @@ html {
     --background-tertiary-color: #ECF2F1;
 
     --button-background-primary-color: rgba(255, 255, 255, 0.75);
+    --button-background-primary-color-hover: rgba(239, 142, 134, 0.75);
 
     --logo-primary-color: white;
     --logo-secondary-color: red;
     --logo-tertiary-color: cyan;
 
     --paragraphs-primary-color: #BCC6C9;
+
+    --links-primary-color: #BCC6C9;
+    --links-primary-color-hover: #EF8E86;
 }
 
 .bg-primary {
@@ -170,6 +174,10 @@ a {
     padding: 15px 30px;
     background-color: var(--button-background-primary-color);
     border-radius: 3px;
+}
+
+.button:hover {
+    background-color: var(--button-background-primary-color-hover);
 }
 
 .button::before {
@@ -322,7 +330,7 @@ footer .container {
 }
 
 footer .container-body-left {
-    width: 70%;
+    width: 75%;
 }
 
 footer .logo {
@@ -349,7 +357,7 @@ footer .logo-3 {
 }
 
 footer .container-body-right {
-    width: 30%;
+    width: 25%;
 }
 
 .vertical-line {
@@ -363,9 +371,13 @@ footer .links {
 
 footer .links, footer a {
     font-size: 16px;
-    color: var(--paragraphs-primary-color);
+    color: var(--links-primary-color);
     font-family: 'CintaBook';
     font-style: italic;
     font-weight: 400;
     text-align: end;
+}
+
+footer .links a:hover {
+    color: var(--links-primary-color-hover);
 }
