@@ -389,6 +389,7 @@ html {
 }
 
 .img-poison{
+    position: relative;
     width: 100%;
     height: 50%;
     margin: 50px 0px;
@@ -398,6 +399,20 @@ html {
     background-size: contain;
     animation-duration: 1.0s;
     animation-name: animate-slide-left;
+}
+
+.img-poison::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/neon.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: animate-fade 1.5s infinite alternate;
 }
 
 .disclaimer {
