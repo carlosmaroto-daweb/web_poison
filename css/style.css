@@ -221,6 +221,10 @@ a {
     fill: var(--icons-primary-color);
 }
 
+#scroll-icon a svg {
+    transition: all .3s;
+}
+
 #scroll-icon a:hover svg {
     fill: var(--icons-primary-color-hover);
 }
@@ -354,6 +358,8 @@ a {
     font-family: 'DTJakob';
     font-style: italic;
     font-weight: 600;
+    animation-duration: 1.0s;
+    animation-name: animate-slide-right;
 }
 
 #section1 .title-section-2 {
@@ -366,6 +372,8 @@ a {
     font-family: 'DTJakob';
     font-style: italic;
     font-weight: 600;
+    animation-duration: 1.3s;
+    animation-name: animate-slide-right;
 }
 
 #section1 p {
