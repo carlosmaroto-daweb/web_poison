@@ -90,6 +90,17 @@
     }
 }
 
+@keyframes animate-slide-bottom {
+    0% {
+        opacity: 0;
+        transform: translate(0, 50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
 /*****************************************************************************/
 /** COLORS **/
 /*****************************************************************************/
@@ -102,6 +113,9 @@ html {
     --background-secondary-color-1: var(--secondary-color);
     --background-secondary-color-2: #F5C5B7;
     --background-tertiary-color: #ECF2F1;
+
+    --icons-primary-color: white;
+    --icons-primary-color-hover: #EF8E86;
 
     --button-background-primary-color: rgba(255, 255, 255, 0.75);
     --button-background-primary-color-hover: rgba(239, 142, 134, 0.75);
@@ -143,6 +157,10 @@ body {
 
 a {
     text-decoration: none;
+}
+
+.hidden {
+    opacity: 0 !important;
 }
 
 /*****************************************************************************/
@@ -188,6 +206,35 @@ a {
 /*****************************************************************************/
 /** GLOBAL ELEMENTS **/
 /*****************************************************************************/
+
+#scroll-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 15%;
+    opacity: 1;
+    transition: all .3s;
+    animation-duration: 1.0s;
+    animation-name: animate-slide-bottom;
+}
+
+#scroll-icon svg {
+    fill: var(--icons-primary-color);
+}
+
+#scroll-icon a:hover svg {
+    fill: var(--icons-primary-color-hover);
+}
+
+#scroll-icon .bi-mouse {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 5px;
+}
+
+#scroll-icon .bi-caret-down-fill {
+    width: 20px;
+    height: 20px;
+}
 
 .logo {
     position: relative;
@@ -262,43 +309,43 @@ a {
 /** SECTION 1 **/
 /*****************************************************************************/
 
-.section1 .logo {
+#section1 .logo {
     width: 190px;
 }
 
-.section1 .logo-1 {
+#section1 .logo-1 {
     top: 15px;
     left: 0px;
     font-size: 50px;
 }
 
-.section1 .logo-2 {
+#section1 .logo-2 {
     top: 12px;
     left: -3px;
     font-size: 50px;
 }
 
-.section1 .logo-3 {
+#section1 .logo-3 {
     top: 18px;
     left: 3px;
     font-size: 50px;
 }
 
-.section1 .container-body-left {
+#section1 .container-body-left {
     width: 65%;
 }
 
-.section1 .container-body-right {
+#section1 .container-body-right {
     width: 35%;
 }
 
-.section1 .title-section {
+#section1 .title-section {
     position: relative;
     width: 750px;
     height: 210px;
 }
 
-.section1 .title-section-1 {
+#section1 .title-section-1 {
     position: absolute;
     top: -70px;
     left: 0px;
@@ -309,7 +356,7 @@ a {
     font-weight: 600;
 }
 
-.section1 .title-section-2 {
+#section1 .title-section-2 {
     position: absolute;
     top: 15px;
     left: 40px;
@@ -321,7 +368,7 @@ a {
     font-weight: 600;
 }
 
-.section1 p {
+#section1 p {
     width: 50%;
     color: var(--paragraphs-primary-color);
     font-family: 'Poppins';
@@ -329,7 +376,7 @@ a {
     margin: 30px 0px;
 }
 
-.section1 .button .text {
+#section1 .button .text {
     color: var(--background-primary-color);
 }
 
