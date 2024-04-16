@@ -146,10 +146,6 @@ html {
 /** INITIAL SETUP **/
 /*****************************************************************************/
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -157,6 +153,10 @@ body {
 
 a {
     text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .hidden {
