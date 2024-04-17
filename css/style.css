@@ -93,17 +93,6 @@
     }
 }
 
-@keyframes animate-slide-top {
-    0% {
-        opacity: 0;
-        transform: translate(0, -50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-}
-
 @keyframes animate-slide-bottom {
     0% {
         opacity: 0;
@@ -117,6 +106,17 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+.animate-show-slide {
+    opacity: 0 !important;
+}
+
+.animate-show-slide-viewport {
+    animation-delay: 0.2s;
+    animation-duration: 1.0s;
+    animation-name: animate-show-slide;
+    animation-fill-mode: forwards;
 }
 
 .animate-slide-left {

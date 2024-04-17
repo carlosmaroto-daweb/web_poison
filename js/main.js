@@ -31,6 +31,13 @@ function manageAnimations() {
             i--;
         }
     }
+    elements = document.getElementsByClassName('animate-show-slide');
+    for (let i=0; i<elements.length; i++) {
+        if (isInViewport(elements[i])) {
+            elements[i].classList.replace('animate-show-slide', 'animate-show-slide-viewport');
+            i--;
+        }
+    }
 }
 
 function showScroll() {
