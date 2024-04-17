@@ -45,6 +45,13 @@
 }
 
 @font-face {
+    font-family: 'BergenSans';
+    src: url('../fonts/BergenSans/BergenSans-BoldItalic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 700;
+}
+
+@font-face {
     font-family: 'CintaBook';
     src: url('../fonts/CintaBook/CintaBook-RegularItalic.ttf') format('truetype');
     font-style: italic;
@@ -120,7 +127,9 @@ html {
     --background-primary-color: var(--primary-color);
     --background-secondary-color-1: var(--secondary-color);
     --background-secondary-color-2: #F5C5B7;
-    --background-tertiary-color: #ECF2F1;
+    --background-tertiary-color-1: var(--secondary-color);
+    --background-tertiary-color-2: var(--tertiary-color);
+    --background-quaternary-color: #ECF2F1;
 
     --icons-primary-color: white;
     --icons-primary-color-hover: #EF8E86;
@@ -146,8 +155,32 @@ html {
     background: linear-gradient(var(--background-secondary-color-1), var(--background-secondary-color-2));
 }
 
-.bg-tertiary {
-    background-color: var(--background-tertiary-color);
+.bg-tertiary-1 {
+    background: 
+        linear-gradient(to right, rgba(255, 255, 255, 0), var(--background-tertiary-color-2)),
+        repeating-linear-gradient(
+            45deg,
+            rgba(0, 0, 0, 0) 0px,
+            rgba(0, 0, 0, 0) 6px,
+            var(--background-tertiary-color-1) 6px,
+            var(--background-tertiary-color-1) 7px
+        );
+}
+
+.bg-tertiary-2 {
+    background: 
+        linear-gradient(to left, rgba(255, 255, 255, 0), var(--background-tertiary-color-1)),
+        repeating-linear-gradient(
+            -45deg,
+            rgba(0, 0, 0, 0) 0px,
+            rgba(0, 0, 0, 0) 6px,
+            var(--background-tertiary-color-2) 6px,
+            var(--background-tertiary-color-2) 7px
+        );
+}
+
+.bg-quaternary {
+    background-color: var(--background-quaternary-color);
 }
 
 /*****************************************************************************/
@@ -436,32 +469,59 @@ html {
 /** SECTION 2 **/
 /*****************************************************************************/
 
+#section2 .container {
+    margin: 50px 0px;
+}
+
 #section2 .title-section {
     position: relative;
-    width: 750px;
+    width: 610px;
     height: 210px;
+}
+
+#section2 .line-mesh {
+    position: absolute;
+    left: -40px;
+    width: 300px;
+    height: 100px;
+    animation-duration: 1.0s;
+    animation-name: animate-slide-right;
+}
+
+#section2 .index-section {
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    font-size: 25px;
+    color: var(--primary-color);
+    font-family: 'BergenSans';
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 5px;
+    animation-duration: 1.1s;
+    animation-name: animate-slide-right;
 }
 
 #section2 .title-section-1 {
     position: absolute;
-    top: -70px;
+    top: 30px;
     left: 0px;
-    font-size: 130px;
+    font-size: 100px;
     color: var(--primary-color);
     font-family: 'BergenSans';
     font-style: normal;
     font-weight: 600;
-    animation-duration: 1.0s;
+    animation-duration: 1.2s;
     animation-name: animate-slide-right;
 }
 
 #section2 .title-section-2 {
     position: absolute;
-    top: 15px;
+    top: 90px;
     left: 40px;
-    font-size: 130px;
+    font-size: 100px;
     color: transparent;
-    -webkit-text-stroke: 2px var(--secondary-color);
+    -webkit-text-stroke: 1px var(--secondary-color);
     font-family: 'BergenSans';
     font-style: normal;
     font-weight: 600;
