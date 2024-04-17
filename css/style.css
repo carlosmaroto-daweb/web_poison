@@ -183,6 +183,7 @@ html {
     --logo-tertiary-color: cyan;
 
     --paragraphs-primary-color: #BCC6C9;
+    --paragraphs-secondary-color: #5F7780;
 
     --links-primary-color: #BCC6C9;
     --links-primary-color-hover: #EF8E86;
@@ -576,7 +577,7 @@ a {
     animation-duration: 1.3s;
 }
 
-#section2 .explanation {
+.explanation {
     margin: 50px 0px;
     font-size: 20px;
     color: var(--primary-color);
@@ -584,6 +585,24 @@ a {
     font-style: normal;
     font-weight: 600;
     text-align: center;
+}
+
+.subtitle {
+    margin: 10px 0px;
+    font-size: 50px;
+    color: var(--primary-color);
+    font-family: 'BergenSans';
+    font-style: normal;
+    font-weight: 600;
+}
+
+#section2 p {
+    margin: 0px !important;
+    width: 40%;
+    color: var(--paragraphs-secondary-color);
+    font-family: 'Poppins';
+    font-weight: 400;
+    margin: 30px 0px;
 }
 
 /*****************************************************************************/
