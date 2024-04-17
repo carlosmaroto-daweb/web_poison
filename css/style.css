@@ -639,6 +639,10 @@ a {
     background-size: contain;
 }
 
+#section1 .img-dolphin.animate-slide-left-viewport {
+    animation-duration: 1.0s;
+}
+
 
 /*****************************************************************************/
 /** SECTION 3 **/
