@@ -172,8 +172,8 @@ html {
     --background-tertiary-color-2: var(--tertiary-color);
     --background-quaternary-color: #ECF2F1;
 
-    --icons-primary-color: white;
-    --icons-primary-color-hover: #EF8E86;
+    --icons-primary-color: var(--tertiary-color);
+    --icons-primary-color-hover: var(--secondary-color);
 
     --button-background-primary-color: rgba(255, 255, 255, 0.75);
     --button-background-primary-color-hover: rgba(239, 142, 134, 0.75);
@@ -185,8 +185,14 @@ html {
     --paragraphs-primary-color: #BCC6C9;
     --paragraphs-secondary-color: #5F7780;
 
+    --cards-background-color: var(--tertiary-color);
+    --cards-title-color: var(--primary-color);
+    --cards-text-color: var(--primary-color);
+    --cards-button-background-color: var(--secondary-color);
+    --cards-button-text-color: var(--tertiary-color);
+
     --links-primary-color: #BCC6C9;
-    --links-primary-color-hover: #EF8E86;
+    --links-primary-color-hover: var(--secondary-color);
 }
 
 .bg-primary {
@@ -649,7 +655,8 @@ a {
 /*****************************************************************************/
 
 #section3 .container {
-    margin: 50px 0px;
+    height: auto;
+    margin-top: 50px;
 }
 
 #section3 .title-section {
@@ -714,6 +721,63 @@ a {
 
 #section3 .title-section-2.animate-slide-left-viewport {
     animation-duration: 1.3s;
+}
+
+.card-container {
+    margin: 50px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: start;
+    position: relative;
+}
+
+.card {
+    /*width: 20%;*/
+    padding: 15px;
+    background-color: var(--cards-background-color);
+    border-radius: 10px;
+}
+
+.card img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.card .title {
+    margin-left: 15px;
+    font-size: 20px;
+    color: var(--cards-title-color);
+    text-transform: uppercase;
+    font-family: 'HalisGR';
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.card p {
+    margin: 10px 0px;
+    font-size: 16px;
+    color: var(--cards-title-color);
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+
+.card-button {
+    width: fit-content;
+    padding: 5px 20px;
+    font-size: 16px;
+    color: var( --cards-button-text-color);
+    font-family: 'Poppins';
+    font-weight: 400;
+    background-color: var(--cards-button-background-color);
+    border-radius: 30px;
+    align-self: flex-end;
+}
+
+.card-button svg {
+    margin-left: 10px;
 }
 
 /*****************************************************************************/
