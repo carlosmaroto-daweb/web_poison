@@ -83,7 +83,6 @@ function adjustMasonry() {
             indexCard++;
         }
     }
-    console.log(diffHeights);
     
     indexCard = columns;
     let totalDifference = 0;
@@ -97,5 +96,4 @@ function adjustMasonry() {
             indexCard++;
         }
     }
-    
 }
