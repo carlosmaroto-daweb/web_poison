@@ -57,21 +57,26 @@ function adjustMasonry() {
     /*
     const container = document.getElementById('card-container');
     const cards = container.querySelectorAll('.card');
-
-    const columns = 4; // Número de columnas
-    const columnHeights = Array.from({ length: columns }, () => 0);
-
+    
+    const gap = parseInt(window.getComputedStyle(container).gap);
+    const columnWidth = cards[0].offsetWidth + gap;
+    const columns = Math.floor(container.offsetWidth / columnWidth) + 1;
+    let columnHeights = Array.from({ length: columns }, () => 0);
     cards.forEach(card => {
-        const minHeightIndex = columnHeights.indexOf(Math.min(...columnHeights));
-        const minHeight = columnHeights[minHeightIndex];
+        const minHeight = Math.min(...columnHeights);
+        console.log(minHeight);
+        const columnIndex = columnHeights.indexOf(minHeight); // Obtener el índice de la columna más corta
+        const leftOffset = columnIndex * columnWidth; // Calcular el desplazamiento horizontal
+        const topOffset = columnHeights[columnIndex]; // Calcular el desplazamiento vertical
 
         card.style.position = 'absolute';
-        card.style.left = `${minHeightIndex * (100 / columns)}%`; // Calcula la posición horizontal basada en el número de columnas
-        card.style.top = `${minHeight}px`; // Asigna la posición vertical basada en la columna más corta
+        card.style.left = `${leftOffset}px`;
+        card.style.top = `${topOffset}px`;
 
-        columnHeights[minHeightIndex] += card.offsetHeight + 30; // Suma la altura de la tarjeta a la columna
+        columnHeights[columnIndex] += card.offsetHeight + gap; // Actualizar la altura de la columna
     });
 
-    container.style.height = `${Math.max(...columnHeights)}px`; // Establece la altura del contenedor basada en la columna más alta
+    const maxColumnHeight = Math.max(...columnHeights); // Obtener la altura máxima de todas las columnas
+    container.style.height = `${maxColumnHeight}px`; // Establecer la altura del contenedor
     */
 }

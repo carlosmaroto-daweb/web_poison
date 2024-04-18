@@ -728,14 +728,10 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
-    /*position: relative;*/
 }
 
 .card {
-    height: fit-content;
-    padding: 15px;
-    background-color: var(--cards-background-color);
-    border-radius: 10px;
+    position: relative;
 }
 
 #card1.animate-show-slide-viewport {
@@ -784,6 +780,13 @@ a {
 
 #card12.animate-show-slide-viewport {
     animation-duration: 2.1s;
+}
+
+.card .content-card {
+    height: fit-content;
+    padding: 15px;
+    background-color: var(--cards-background-color);
+    border-radius: 10px;
 }
 
 .card img {
