@@ -77,28 +77,29 @@ function adjustMasonry() {
             diffHeights[i] = [];
             maxHeights = 0;
             indexAux = indexCard;
-            for (let j=0; j<columns; j++) {
+            for (let j=0; j<columns && indexAux<numCards; j++) {
                 if (cards[indexAux].clientHeight > maxHeights) {
                     maxHeights = cards[indexAux].clientHeight;
                 }
                 indexAux++;
             }
-            for (let j=0; j<columns; j++) {
+            for (let j=0; j<columns && indexAux<numCards; j++) {
                 diffHeights[i][j] = maxHeights - cards[indexCard].clientHeight;
                 indexCard++;
             }
         }
-        
-        indexCard = columns;
-        let totalDifference = 0;
-        for (let i=1; i<rows; i++) {
-            for (let j=0; j<columns; j++) {
-                totalDifference = 0;
-                for (let k=0; k<i; k++) {
-                    totalDifference += diffHeights[k][j];
+        if (rows > 1) {
+            indexCard = columns;
+            let totalDifference = 0;
+            for (let i=1; i<rows; i++) {
+                for (let j=0; j<columns && indexCard<numCards; j++) {
+                    totalDifference = 0;
+                    for (let k=0; k<i; k++) {
+                        totalDifference += diffHeights[k][j];
+                    }
+                    cards[indexCard].style.transform = 'translateY(' + (- totalDifference) + 'px)';
+                    indexCard++;
                 }
-                cards[indexCard].style.transform = 'translateY(' + (- totalDifference) + 'px)';
-                indexCard++;
             }
         }
     }

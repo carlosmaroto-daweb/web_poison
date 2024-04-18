@@ -189,6 +189,7 @@ html {
     --cards-title-color: var(--primary-color);
     --cards-text-color: var(--primary-color);
     --cards-button-background-color: var(--secondary-color);
+    --cards-button-background-color-hover: var(--primary-color);
     --cards-button-text-color: var(--tertiary-color);
 
     --links-primary-color: #BCC6C9;
@@ -821,6 +822,11 @@ a {
     background-color: var(--cards-button-background-color);
     border-radius: 30px;
     align-self: flex-end;
+    transition: all .3s;
+}
+
+.card-button:hover {
+    background-color: var(--cards-button-background-color-hover);
 }
 
 .card-button svg {
