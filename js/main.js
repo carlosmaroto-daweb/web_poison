@@ -57,10 +57,14 @@ function adjustMasonry() {
     const container = document.getElementById('card-container');
     const cards = container.querySelectorAll('.card');
 
+    const numCards = cards.length;
+    for (let i=0; i<numCards; i++) {
+        cards[i].style.transform = 'translateY(0px)';
+    }
+
     const gap = parseInt(window.getComputedStyle(container).gap);
     const columnWidth = cards[0].offsetWidth + gap;
     const columns = Math.floor(container.offsetWidth / columnWidth) + 1;
-    const numCards = cards.length;
     const rows = numCards / columns;
 
     let diffHeights = [];
@@ -68,32 +72,34 @@ function adjustMasonry() {
     let indexCard = 0;
     let indexAux = 0;
 
-    for (let i=0; i<rows; i++) {
-        diffHeights[i] = [];
-        maxHeights = 0;
-        indexAux = indexCard;
-        for (let j=0; j<columns; j++) {
-            if (cards[indexAux].clientHeight > maxHeights) {
-                maxHeights = cards[indexAux].clientHeight;
+    if (columns > 1) {
+        for (let i=0; i<rows; i++) {
+            diffHeights[i] = [];
+            maxHeights = 0;
+            indexAux = indexCard;
+            for (let j=0; j<columns; j++) {
+                if (cards[indexAux].clientHeight > maxHeights) {
+                    maxHeights = cards[indexAux].clientHeight;
+                }
+                indexAux++;
             }
-            indexAux++;
-        }
-        for (let j=0; j<columns; j++) {
-            diffHeights[i][j] = maxHeights - cards[indexCard].clientHeight;
-            indexCard++;
-        }
-    }
-    
-    indexCard = columns;
-    let totalDifference = 0;
-    for (let i=1; i<rows; i++) {
-        for (let j=0; j<columns; j++) {
-            totalDifference = 0;
-            for (let k=0; k<i; k++) {
-                totalDifference += diffHeights[k][j];
+            for (let j=0; j<columns; j++) {
+                diffHeights[i][j] = maxHeights - cards[indexCard].clientHeight;
+                indexCard++;
             }
-            cards[indexCard].style.transform = 'translateY(' + (- totalDifference) + 'px)';
-            indexCard++;
+        }
+        
+        indexCard = columns;
+        let totalDifference = 0;
+        for (let i=1; i<rows; i++) {
+            for (let j=0; j<columns; j++) {
+                totalDifference = 0;
+                for (let k=0; k<i; k++) {
+                    totalDifference += diffHeights[k][j];
+                }
+                cards[indexCard].style.transform = 'translateY(' + (- totalDifference) + 'px)';
+                indexCard++;
+            }
         }
     }
 }
