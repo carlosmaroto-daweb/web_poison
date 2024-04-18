@@ -739,6 +739,54 @@ a {
     border-radius: 10px;
 }
 
+#card1.animate-show-slide-viewport {
+    animation-duration: 1.0s;
+}
+
+#card2.animate-show-slide-viewport {
+    animation-duration: 1.1s;
+}
+
+#card3.animate-show-slide-viewport {
+    animation-duration: 1.2s;
+}
+
+#card4.animate-show-slide-viewport {
+    animation-duration: 1.3s;
+}
+
+#card5.animate-show-slide-viewport {
+    animation-duration: 1.4s;
+}
+
+#card6.animate-show-slide-viewport {
+    animation-duration: 1.5s;
+}
+
+#card7.animate-show-slide-viewport {
+    animation-duration: 1.6s;
+}
+
+#card8.animate-show-slide-viewport {
+    animation-duration: 1.7s;
+}
+
+#card9.animate-show-slide-viewport {
+    animation-duration: 1.8s;
+}
+
+#card10.animate-show-slide-viewport {
+    animation-duration: 1.9s;
+}
+
+#card11.animate-show-slide-viewport {
+    animation-duration: 2.0s;
+}
+
+#card12.animate-show-slide-viewport {
+    animation-duration: 2.1s;
+}
+
 .card img {
     width: 30px;
     height: 30px;
