@@ -60,12 +60,14 @@ function manageAnimations() {
  */
 function showScroll() {
     var scrollIcon = document.getElementById('scroll-icon');
-    if (window.scrollY > 0) {
-        scrollIcon.classList.add('animate-slide-bottom');
-        scrollIcon.classList.remove('animate-slide-bottom-viewport');
-    } else {
-        scrollIcon.classList.add('animate-slide-bottom-viewport');
-        scrollIcon.classList.remove('animate-slide-bottom');
+    if (scrollIcon) {
+        if (window.scrollY > 0) {
+            scrollIcon.classList.add('animate-slide-bottom');
+            scrollIcon.classList.remove('animate-slide-bottom-viewport');
+        } else {
+            scrollIcon.classList.add('animate-slide-bottom-viewport');
+            scrollIcon.classList.remove('animate-slide-bottom');
+        }
     }
 };
 
@@ -74,58 +76,66 @@ function showScroll() {
  * Uses CSS transforms to adjust the vertical position of cards.
  */
 function adjustMasonry() {
-    // Get the container element and all the card elements inside it
+    // Get the container element
     const container = document.getElementById('card-container');
-    const cards = container.querySelectorAll('.card');
 
-    // Reset the vertical position of all cards
-    const numCards = cards.length;
-    for (let i=0; i<numCards; i++) {
-        cards[i].style.transform = 'translateY(0px)';
-    }
+    // Check if the container exists
+    if (container) {
+        // Get all card elements inside the container
+        const cards = container.querySelectorAll('.card');
 
-    // Calculate column width and number of columns and row
-    const gap = parseInt(window.getComputedStyle(container).gap);
-    const columnWidth = cards[0].offsetWidth + gap;
-    const columns = Math.floor(container.offsetWidth / columnWidth) + 1;
-    const rows = numCards / columns;
-
-    // Initialize variables
-    let diffHeights = [];
-    let maxHeights = 0;
-    let indexCard = 0;
-    let indexAux = 0;
-
-    // If there are more than one column
-    if (columns > 1) {
-        // Calculate height differences for each row
-        for (let i=0; i<rows; i++) {
-            diffHeights[i] = [];
-            maxHeights = 0;
-            indexAux = indexCard;
-            for (let j=0; j<columns && indexAux<numCards; j++) {
-                if (cards[indexAux].clientHeight > maxHeights) {
-                    maxHeights = cards[indexAux].clientHeight;
-                }
-                indexAux++;
+        // Check if there are any card elements
+        if (cards.length > 0) {
+            // Reset the vertical position of all cards
+            const numCards = cards.length;
+            for (let i=0; i<numCards; i++) {
+                cards[i].style.transform = 'translateY(0px)';
             }
-            for (let j=0; j<columns && indexAux<numCards; j++) {
-                diffHeights[i][j] = maxHeights - cards[indexCard].clientHeight;
-                indexCard++;
-            }
-        }
-         // If there is more than one row, adjust the vertical position of cards
-        if (rows > 1) {
-            indexCard = columns;
-            let totalDifference = 0;
-            for (let i=1; i<rows; i++) {
-                for (let j=0; j<columns && indexCard<numCards; j++) {
-                    totalDifference = 0;
-                    for (let k=0; k<i; k++) {
-                        totalDifference += diffHeights[k][j];
+
+            // Calculate column width and number of columns and row
+            const gap = parseInt(window.getComputedStyle(container).gap);
+            const columnWidth = cards[0].offsetWidth + gap;
+            const columns = Math.floor(container.offsetWidth / columnWidth) + 1;
+            const rows = numCards / columns;
+
+            // Initialize variables for storing height differences
+            let diffHeights = [];
+            let maxHeights = 0;
+            let indexCard = 0;
+            let indexAux = 0;
+
+            // If there are more than one column
+            if (columns > 1) {
+                // Calculate height differences for each row
+                for (let i=0; i<rows; i++) {
+                    diffHeights[i] = [];
+                    maxHeights = 0;
+                    indexAux = indexCard;
+                    for (let j=0; j<columns && indexAux<numCards; j++) {
+                        if (cards[indexAux].clientHeight > maxHeights) {
+                            maxHeights = cards[indexAux].clientHeight;
+                        }
+                        indexAux++;
                     }
-                    cards[indexCard].style.transform = 'translateY(' + (- totalDifference) + 'px)';
-                    indexCard++;
+                    for (let j=0; j<columns && indexAux<numCards; j++) {
+                        diffHeights[i][j] = maxHeights - cards[indexCard].clientHeight;
+                        indexCard++;
+                    }
+                }
+                // If there is more than one row, adjust the vertical position of cards
+                if (rows > 1) {
+                    indexCard = columns;
+                    let totalDifference = 0;
+                    for (let i=1; i<rows; i++) {
+                        for (let j=0; j<columns && indexCard<numCards; j++) {
+                            totalDifference = 0;
+                            for (let k=0; k<i; k++) {
+                                totalDifference += diffHeights[k][j];
+                            }
+                            cards[indexCard].style.transform = 'translateY(' + (- totalDifference) + 'px)';
+                            indexCard++;
+                        }
+                    }
                 }
             }
         }
