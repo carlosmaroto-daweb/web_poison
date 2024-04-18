@@ -735,6 +735,7 @@ a {
     padding: 15px;
     background-color: var(--cards-background-color);
     border-radius: 10px;
+    transition: transform 0.5s;
 }
 
 #card1.animate-show-slide-viewport {
