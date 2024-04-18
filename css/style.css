@@ -731,7 +731,10 @@ a {
 }
 
 .card {
-    position: relative;
+    height: fit-content;
+    padding: 15px;
+    background-color: var(--cards-background-color);
+    border-radius: 10px;
 }
 
 #card1.animate-show-slide-viewport {
@@ -780,13 +783,6 @@ a {
 
 #card12.animate-show-slide-viewport {
     animation-duration: 2.1s;
-}
-
-.card .content-card {
-    height: fit-content;
-    padding: 15px;
-    background-color: var(--cards-background-color);
-    border-radius: 10px;
 }
 
 .card img {
