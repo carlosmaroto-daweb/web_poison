@@ -8,9 +8,9 @@
     <meta name="description" content="Advanced WordPress Knowledge Test">
     <meta name="keywords" content="HTML, CSS, JavaScript, WordPress, SIDN, Poison">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="icon" type="image/png" href="img/favicon.png"/>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
-    <script src='js/main.js'></script>
+    <link rel="icon" type="image/png" href="<?php echo bloginfo('template_directory');?>/img/favicon.png"/>
+    <link rel='stylesheet' type='text/css' media='screen' href='<?php echo bloginfo('template_directory');?>/style.css'>
+    <script src='<?php echo bloginfo('template_directory');?>/js/main.js'></script>
 </head>
 <body>
     <!------------------------------------------------------------------------>
@@ -113,7 +113,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/mushroom.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/mushroom.jpg">
                         <!-- Title -->
                         <div class="title">Mushroom</div>
                     </div>
@@ -134,7 +134,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/snake.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/snake.jpg">
                         <!-- Title -->
                         <div class="title">Snake</div>
                     </div>
@@ -155,7 +155,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/weird_frog.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/weird_frog.jpg">
                         <!-- Title -->
                         <div class="title">Weird frog</div>
                     </div>
@@ -176,7 +176,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/jellyfish.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/jellyfish.jpg">
                         <!-- Title -->
                         <div class="title">Jellyfish</div>
                     </div>
@@ -197,7 +197,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/spider.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/spider.jpg">
                         <!-- Title -->
                         <div class="title">Spider</div>
                     </div>
@@ -218,7 +218,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/big_spider.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/big_spider.jpg">
                         <!-- Title -->
                         <div class="title">Big spider</div>
                     </div>
@@ -239,7 +239,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/scorpion.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/scorpion.jpg">
                         <!-- Title -->
                         <div class="title">Scorpion</div>
                     </div>
@@ -260,7 +260,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/death_kiss.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/death_kiss.jpg">
                         <!-- Title -->
                         <div class="title">Death kiss</div>
                     </div>
@@ -281,7 +281,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/weird_cult.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/weird_cult.jpg">
                         <!-- Title -->
                         <div class="title">Weird cult</div>
                     </div>
@@ -302,7 +302,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/some_herb.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/some_herb.jpg">
                         <!-- Title -->
                         <div class="title">Some herb</div>
                     </div>
@@ -323,7 +323,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/lion_bite.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/lion_bite.jpg">
                         <!-- Title -->
                         <div class="title">Lion bite</div>
                     </div>
@@ -344,7 +344,7 @@
                     <!-- Header -->
                     <div class="row align-items-center">
                         <!-- Image -->
-                        <img src="img/rabies.jpg">
+                        <img src="<?php echo bloginfo('template_directory');?>/img/rabies.jpg">
                         <!-- Title -->
                         <div class="title">Rabies</div>
                     </div>

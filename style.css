@@ -1,59 +1,73 @@
+/*
+Theme Name: POSION
+Theme URI: https://sidn.infinityfreeapp.com/
+Author: Carlos Maroto Delgado
+Author URI: https://github.com/carlosmaroto-daweb/
+Description: Advanced WordPress Knowledge Test.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: HTML, CSS, JavaScript, WordPress, SIDN, Poison
+Text Domain: generaltheme
+Domain Path: /languages
+*/
+
 /*****************************************************************************/
 /** FONTS **/
 /*****************************************************************************/
 
 @font-face {
     font-family: 'Futura Round';
-    src: url('../fonts/FuturaRound/FuturaRound-SemiBoldItalic.ttf') format('truetype');
+    src: url('./fonts/FuturaRound/FuturaRound-SemiBoldItalic.ttf') format('truetype');
     font-style: italic;
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'HalisGR';
-    src: url('../fonts/HalisGR/HalisGR-Bold.otf') format('truetype');
+    src: url('./fonts/HalisGR/HalisGR-Bold.otf') format('truetype');
     font-style: normal;
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'DTJakob';
-    src: url('../fonts/DTJakob/DTJakob-SemiBoldItalic.otf') format('truetype');
+    src: url('./fonts/DTJakob/DTJakob-SemiBoldItalic.otf') format('truetype');
     font-style: italic;
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+    src: url('./fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
     font-style: normal;
     font-weight: 200;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
     font-style: normal;
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'BergenSans';
-    src: url('../fonts/BergenSans/BergenSans-SemiBold.ttf') format('truetype');
+    src: url('./fonts/BergenSans/BergenSans-SemiBold.ttf') format('truetype');
     font-style: normal;
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'BergenSans';
-    src: url('../fonts/BergenSans/BergenSans-BoldItalic.ttf') format('truetype');
+    src: url('./fonts/BergenSans/BergenSans-BoldItalic.ttf') format('truetype');
     font-style: italic;
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'CintaBook';
-    src: url('../fonts/CintaBook/CintaBook-RegularItalic.ttf') format('truetype');
+    src: url('./fonts/CintaBook/CintaBook-RegularItalic.ttf') format('truetype');
     font-style: italic;
     font-weight: 400;
 }
@@ -486,7 +500,7 @@ a {
     width: 100%;
     height: 50%;
     margin: 50px 0px;
-    background-image: url(../img/poison.png);
+    background-image: url(./img/poison.png);
     background-position: left center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -499,7 +513,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../img/neon.png);
+    background-image: url(./img/neon.png);
     background-position: left center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -643,7 +657,7 @@ a {
 }
 
 .img-dolphin {
-    background-image: url(../img/dolphin.png);
+    background-image: url(./img/dolphin.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
