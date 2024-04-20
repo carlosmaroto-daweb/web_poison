@@ -1,3 +1,21 @@
+    <!------------------------------------------------------------------------>
+    <!-- ACF VARIABLES -->
+    <!------------------------------------------------------------------------>
+    <?php
+        // Texts
+        $logo_text = get_field('logo_text') ? get_field('logo_text') : 'POISON';
+
+        // Colors
+        $logo_primary_color = get_field('logo_primary_color');
+        $logo_secondary_color = get_field('logo_secondary_color');
+        $logo_tertiary_color = get_field('logo_tertiary_color');
+
+        // Styles
+        $style_logo_primary_color = $logo_primary_color ? 'style="color: ' . $logo_primary_color . '"' : '';
+        $style_logo_secondary_color = $logo_secondary_color ? 'style="-webkit-text-stroke: 0.4px ' . $logo_secondary_color . '"' : '';
+        $style_logo_tertiary_color = $logo_tertiary_color ? 'style="-webkit-text-stroke: 0.1px ' . $logo_tertiary_color . '"' : '';
+    ?>
+    
     <footer class="bg-primary column align-items-center">
         <!-- Container -->
         <div class="container row justify-content-center">
