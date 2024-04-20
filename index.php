@@ -114,7 +114,7 @@
             }
         }
 
-        // Text - hero_button_url
+        // Url - hero_button_url
         if (!acf_get_field('hero_button_url')) {
             $hero_button_url = '#';
         }
@@ -122,6 +122,20 @@
             $hero_button_url = get_field('hero_button_url');
             if ($hero_button_url == null) {
                 $hero_button_url = '';
+            }
+        }
+
+        // Image - hero_image
+        if (!acf_get_field('hero_image')) {
+            $style_hero_image = '';
+        }
+        else {
+            $hero_image = get_field('hero_image');
+            if ($hero_image == null) {
+                $style_hero_image = '';
+            }
+            else {
+                $style_hero_image = 'background-image: url(' . $hero_image . ');';
             }
         }
     ?>
@@ -169,7 +183,7 @@
             <!-- Container Body Right -->
             <div class="container-body-right column justify-content-end">
                 <!-- Image -->
-                <div class="img-poison animate-slide-left"></div>
+                <div class="img-poison animate-slide-left" <?php echo $style_hero_image;?>></div>
                 <!-- Text -->
                 <div class="disclaimer">*We keep the right to deny any refunds on our own terms. Total responsability is up to the final user buying poison.</div>
             </div>
