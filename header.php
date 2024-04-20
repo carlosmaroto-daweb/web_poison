@@ -9,7 +9,9 @@
     <meta name="keywords" content="HTML, CSS, JavaScript, WordPress, SIDN, Poison">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" type="image/png" href="<?php echo bloginfo('template_directory');?>/assets/img/favicon.png"/>
-    <link rel='stylesheet' type='text/css' media='screen' href='<?php echo bloginfo('template_directory');?>/style.css'>
-    <script src='<?php echo bloginfo('template_directory');?>/assets/js/main.js'></script>
+
+    <?php
+        wp_head();
+    ?>
 </head>
 <body>
