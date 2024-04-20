@@ -6,6 +6,24 @@
     ?>
 
     <!------------------------------------------------------------------------>
+    <!-- ACF VARIABLES -->
+    <!------------------------------------------------------------------------>
+    <?php
+        // Texts
+        $logo_text = get_field('logo_text') ? get_field('logo_text') : 'POISON';
+
+        // Colors
+        $logo_primary_color = get_field('logo_primary_color');
+        $logo_secondary_color = get_field('logo_secondary_color');
+        $logo_tertiary_color = get_field('logo_tertiary_color');
+
+        // Styles
+        $style_logo_primary_color = $logo_primary_color ? 'style="color: ' . $logo_primary_color . '"' : '';
+        $style_logo_secondary_color = $logo_secondary_color ? 'style="-webkit-text-stroke: 0.4px ' . $logo_secondary_color . '"' : '';
+        $style_logo_tertiary_color = $logo_tertiary_color ? 'style="-webkit-text-stroke: 0.1px ' . $logo_tertiary_color . '"' : '';
+    ?>
+
+    <!------------------------------------------------------------------------>
     <!-- SCROLL ICON -->
     <!------------------------------------------------------------------------>
     <div id="scroll-icon" class="animate-slide-bottom">
@@ -25,9 +43,9 @@
     <div id="section1" class="section bg-primary column align-items-center">
         <!-- Logo -->
         <div class="logo">
-            <div class="logo-1" style="color: <?php the_field('logo_primary_color');?>"><?php the_field('logo_text');?></div>
-            <div class="logo-2" style="-webkit-text-stroke: 0.4px <?php the_field('logo_secondary_color');?>"><?php the_field('logo_text');?></div>
-            <div class="logo-3" style="-webkit-text-stroke: 0.1px <?php the_field('logo_tertiary_color');?>"><?php the_field('logo_text');?></div>
+            <div class="logo-1" <?php echo $style_logo_primary_color;?>><?php echo $logo_text;?></div>
+            <div class="logo-2" <?php echo $style_logo_secondary_color;?>><?php echo $logo_text;?></div>
+            <div class="logo-3" <?php echo $style_logo_tertiary_color;?>><?php echo $logo_text;?></div>
         </div>
         <!-- Container -->
         <div class="container row justify-content-center">
