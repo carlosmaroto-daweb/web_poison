@@ -9,6 +9,10 @@
     <!-- ACF VARIABLES -->
     <!------------------------------------------------------------------------>
     <?php
+        /*****************************************************************************/
+        /** LOGO **/
+        /*****************************************************************************/
+
         // Text - logo_text
         if (!acf_get_field('logo_text')) {
             $logo_text = 'POISON';
@@ -61,6 +65,32 @@
                 $style_logo_tertiary_color = 'style="-webkit-text-stroke: 0.1px ' . $logo_tertiary_color . '"';
             }
         }
+        
+        /*****************************************************************************/
+        /** HERO **/
+        /*****************************************************************************/
+
+        // Text - hero_title_1
+        if (!acf_get_field('hero_title_1')) {
+            $hero_title_1 = 'Buy poison.';
+        }
+        else {
+            $hero_title_1 = get_field('hero_title_1');
+            if ($hero_title_1 == null) {
+                $hero_title_1 = '';
+            }
+        }
+
+        // Text - hero_title_2
+        if (!acf_get_field('hero_title_2')) {
+            $hero_title_2 = 'Trust us.';
+        }
+        else {
+            $hero_title_2 = get_field('hero_title_2');
+            if ($hero_title_2 == null) {
+                $hero_title_2 = '';
+            }
+        }
     ?>
 
     <!------------------------------------------------------------------------>
@@ -93,8 +123,8 @@
             <div class="container-body-left column justify-content-center">
                 <!-- Title -->
                 <div class="title-section">
-                    <div class="title-section-1 animate-slide-right">Buy poison.</div>
-                    <div class="title-section-2 animate-slide-right">Trust us.</div>
+                    <div class="title-section-1 animate-slide-right"><?php echo $hero_title_1;?></div>
+                    <div class="title-section-2 animate-slide-right"><?php echo $hero_title_2;?></div>
                 </div>
                 <!-- Text -->
                 <p>Your children are safe, why would a company lie to you? We are you friends pal. Buy poison today and we grant you total transparency and full refunds* if you are not satisfied with our service. We care about you ❤️</p>
