@@ -368,258 +368,46 @@
             </div>
             <!-- Card Container -->
             <div id="card-container" class="card-container">
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/mushroom.jpg">
-                        <!-- Title -->
-                        <div class="title">Mushroom</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Dignissim placerat viverra iaculis lacus netus.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/snake.jpg">
-                        <!-- Title -->
-                        <div class="title">Snake</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Sit proin faucibus in enim, amet pretium ac nunc. Ullamcorper molestie ut facilisis sed.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/weird_frog.jpg">
-                        <!-- Title -->
-                        <div class="title">Weird frog</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Vehicula euismod mauris pharetra aliquam amet, et quam enim viverra.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/jellyfish.jpg">
-                        <!-- Title -->
-                        <div class="title">Jellyfish</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Amet lorem metus, in diam.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/spider.jpg">
-                        <!-- Title -->
-                        <div class="title">Spider</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Quisque id vel in vel tellus. Arcu orci pharetra ut magna tristique lacus sapien, purus.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/big_spider.jpg">
-                        <!-- Title -->
-                        <div class="title">Big spider</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Ut felis, in vestibulum fames nunc libero, laoreet neque.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/scorpion.jpg">
-                        <!-- Title -->
-                        <div class="title">Scorpion</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Augue pharetra gravida congue quisque vestibulum dictumst eget leo magna.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/death_kiss.jpg">
-                        <!-- Title -->
-                        <div class="title">Death kiss</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Ut amet lacus fringilla nibh ac non lobortis tempor. Magna turpis nulla quis tempor tellus, ipsum.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/weird_cult.jpg">
-                        <!-- Title -->
-                        <div class="title">Weird cult</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Et, dictumst convallis nulla nisi fames adipiscing bibendum viverra.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/some_herb.jpg">
-                        <!-- Title -->
-                        <div class="title">Some herb</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Sagittis, purus nunc, mattis proin sadales netus venenatis elementum non.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/lion_bite.jpg">
-                        <!-- Title -->
-                        <div class="title">Lion bite</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Vivamus ut scelerisque eu, risus id varius at turpis. Vitae pellentesque nunc, eu, sed donec integer.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card -->
-                <div class="card column animate-show-slide">
-                    <!-- Header -->
-                    <div class="row align-items-center">
-                        <!-- Image -->
-                        <img src="<?php echo bloginfo('template_directory');?>/assets/img/rabies.jpg">
-                        <!-- Title -->
-                        <div class="title">Rabies</div>
-                    </div>
-                    <!-- Text -->
-                    <p>Ut ullamcorper amet, crusus integer nibh felis velit mi.</p>
-                    <!-- Button -->
-                    <a href="#" class="card-button">
-                        <div class="row align-items-center">
-                            <div>Details</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
+
+                <?php
+                    $args = array(
+                        'posts_per_page' => 5,
+                        'post_type'      => array('post')
+                    );
+                    $latest_posts = new WP_Query($args);
+
+                    if($latest_posts->have_posts()):
+                        while($latest_posts->have_posts()):
+                            $latest_posts->the_post();
+                            echo '<!-- Card -->';
+                            echo '<div class="card column animate-show-slide">';
+                                echo '<!-- Header -->';
+                                echo '<div class="row align-items-center">';
+                                    echo '<!-- Image -->';
+                                    echo '<img src="' . get_the_post_thumbnail_url() . '">';
+                                    echo '<!-- Title -->';
+                                    echo '<div class="title">' . get_the_title() . '</div>';
+                                echo '</div>';
+                                echo '<!-- Text -->';
+                                echo '<p>' . the_content() . '</p>';
+                                echo '<!-- Button -->';
+                                echo '<a href="' . get_the_permalink() . '" class="card-button">';
+                                    echo '<div class="row align-items-center">';
+                                        echo '<div>Details</div>';
+                                        echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">';
+                                            echo '<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>';
+                                        echo '</svg>';
+                                    echo '</div>';
+                                echo '</a>';
+                            echo '</div>';
+                            
+                        endwhile;
+                        wp_reset_postdata();
+                    else:
+                        echo 'No posts published yet...';
+                    endif;
+                ?>
+
             </div>
         </div>
     </div>
