@@ -113,6 +113,17 @@
                 $hero_button = '';
             }
         }
+
+        // Text - hero_button_url
+        if (!acf_get_field('hero_button_url')) {
+            $hero_button_url = '#';
+        }
+        else {
+            $hero_button_url = get_field('hero_button_url');
+            if ($hero_button_url == null) {
+                $hero_button_url = '';
+            }
+        }
     ?>
 
     <!------------------------------------------------------------------------>
@@ -151,7 +162,7 @@
                 <!-- Text -->
                 <p><?php echo $hero_paragraph;?></p>
                 <!-- Button -->
-                <a class="button" href="#">
+                <a class="button" href="<?php echo $hero_button_url;?>">
                     <div class="text"><?php echo $hero_button;?></div>
                 </a>
             </div>
