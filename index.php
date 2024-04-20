@@ -91,6 +91,28 @@
                 $hero_title_2 = '';
             }
         }
+
+        // Text - hero_paragraph
+        if (!acf_get_field('hero_paragraph')) {
+            $hero_paragraph = 'Your children are safe, why would a company lie to you? We are you friends pal. Buy poison today and we grant you total transparency and full refunds* if you are not satisfied with our service. We care about you ❤️';
+        }
+        else {
+            $hero_paragraph = get_field('hero_paragraph');
+            if ($hero_paragraph == null) {
+                $hero_paragraph = '';
+            }
+        }
+
+        // Text - hero_button
+        if (!acf_get_field('hero_button')) {
+            $hero_button = 'Drink now!';
+        }
+        else {
+            $hero_button = get_field('hero_button');
+            if ($hero_button == null) {
+                $hero_button = '';
+            }
+        }
     ?>
 
     <!------------------------------------------------------------------------>
@@ -127,10 +149,10 @@
                     <div class="title-section-2 animate-slide-right"><?php echo $hero_title_2;?></div>
                 </div>
                 <!-- Text -->
-                <p>Your children are safe, why would a company lie to you? We are you friends pal. Buy poison today and we grant you total transparency and full refunds* if you are not satisfied with our service. We care about you ❤️</p>
+                <p><?php echo $hero_paragraph;?></p>
                 <!-- Button -->
                 <a class="button" href="#">
-                    <div class="text">Drink now!</div>
+                    <div class="text"><?php echo $hero_button;?></div>
                 </a>
             </div>
             <!-- Container Body Right -->
