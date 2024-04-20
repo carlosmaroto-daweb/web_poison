@@ -138,6 +138,17 @@
                 $style_hero_image = 'background-image: url(' . $hero_image . ');';
             }
         }
+
+        // Text - hero_disclaimer
+        if (!acf_get_field('hero_disclaimer')) {
+            $hero_disclaimer = '*We keep the right to deny any refunds on our own terms. Total responsability is up to the final user buying poison.';
+        }
+        else {
+            $hero_disclaimer = get_field('hero_disclaimer');
+            if ($hero_disclaimer == null) {
+                $hero_disclaimer = '';
+            }
+        }
     ?>
 
     <!------------------------------------------------------------------------>
@@ -185,7 +196,7 @@
                 <!-- Image -->
                 <div class="img-poison animate-slide-left" <?php echo $style_hero_image;?>></div>
                 <!-- Text -->
-                <div class="disclaimer">*We keep the right to deny any refunds on our own terms. Total responsability is up to the final user buying poison.</div>
+                <div class="disclaimer"><?php echo $hero_disclaimer;?></div>
             </div>
         </div>
     </div>
