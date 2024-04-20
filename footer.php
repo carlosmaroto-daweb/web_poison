@@ -2,20 +2,60 @@
     <!-- ACF VARIABLES -->
     <!------------------------------------------------------------------------>
     <?php
-        // Texts
-        $logo_text = get_field('logo_text') ? get_field('logo_text') : 'POISON';
+        // Text - logo_text
+        if (!acf_get_field('logo_text')) {
+            $logo_text = 'POISON';
+        }
+        else {
+            $logo_text = get_field('logo_text');
+            if ($logo_text == null) {
+                $logo_text = '';
+            }
+        }
 
-        // Colors
-        $logo_primary_color = get_field('logo_primary_color');
-        $logo_secondary_color = get_field('logo_secondary_color');
-        $logo_tertiary_color = get_field('logo_tertiary_color');
+        // Color - logo_primary_color
+        if (!acf_get_field('logo_primary_color')) {
+            $style_logo_primary_color = '';
+        }
+        else {
+            $logo_primary_color = get_field('logo_primary_color');
+            if ($logo_primary_color == null) {
+                $style_logo_primary_color = 'style="color: transparent"';
+            }
+            else {
+                $style_logo_primary_color = 'style="color: ' . $logo_primary_color . '"';
+            }
+        }
 
-        // Styles
-        $style_logo_primary_color = $logo_primary_color ? 'style="color: ' . $logo_primary_color . '"' : '';
-        $style_logo_secondary_color = $logo_secondary_color ? 'style="-webkit-text-stroke: 0.4px ' . $logo_secondary_color . '"' : '';
-        $style_logo_tertiary_color = $logo_tertiary_color ? 'style="-webkit-text-stroke: 0.1px ' . $logo_tertiary_color . '"' : '';
+        // Color - logo_secondary_color
+        if (!acf_get_field('logo_secondary_color')) {
+            $style_logo_secondary_color = '';
+        }
+        else {
+            $logo_secondary_color = get_field('logo_secondary_color');
+            if ($logo_secondary_color == null) {
+                $style_logo_secondary_color = 'style="-webkit-text-stroke: 0.4px transparent"';
+            }
+            else {
+                $style_logo_secondary_color = 'style="-webkit-text-stroke: 0.4px ' . $logo_secondary_color . '"';
+            }
+        }
+
+        // Color - logo_tertiary_color
+        if (!acf_get_field('logo_tertiary_color')) {
+            $style_logo_tertiary_color = '';
+        }
+        else {
+            $logo_tertiary_color = get_field('logo_tertiary_color');
+            if ($logo_tertiary_color == null) {
+                $style_logo_tertiary_color = 'style="-webkit-text-stroke: 0.1px transparent"';
+            }
+            else {
+                $style_logo_tertiary_color = 'style="-webkit-text-stroke: 0.1px ' . $logo_tertiary_color . '"';
+            }
+        }
     ?>
-    
+
     <footer class="bg-primary column align-items-center">
         <!-- Container -->
         <div class="container row justify-content-center">
