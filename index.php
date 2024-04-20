@@ -149,6 +149,128 @@
                 $hero_disclaimer = '';
             }
         }
+        
+        /*****************************************************************************/
+        /** SECTION 2 **/
+        /*****************************************************************************/
+
+        // Text - section_2_index
+        if (!acf_get_field('section_2_index')) {
+            $section_2_index = '03 - 05';
+        }
+        else {
+            $section_2_index = get_field('section_2_index');
+            if ($section_2_index == null) {
+                $section_2_index = '';
+            }
+        }
+
+        // Text - section_2_title_1
+        if (!acf_get_field('section_2_title_1')) {
+            $section_2_title_1 = 'Cruelty free';
+        }
+        else {
+            $section_2_title_1 = get_field('section_2_title_1');
+            if ($section_2_title_1 == null) {
+                $section_2_title_1 = '';
+            }
+        }
+
+        // Text - section_2_title_2
+        if (!acf_get_field('section_2_title_2')) {
+            $section_2_title_2 = 'Development';
+        }
+        else {
+            $section_2_title_2 = get_field('section_2_title_2');
+            if ($section_2_title_2 == null) {
+                $section_2_title_2 = '';
+            }
+        }
+
+        // Text - section_2_explanation
+        if (!acf_get_field('section_2_explanation')) {
+            $section_2_explanation = 'Except for the human subjects...';
+        }
+        else {
+            $section_2_explanation = get_field('section_2_explanation');
+            if ($section_2_explanation == null) {
+                $section_2_explanation = '';
+            }
+        }
+
+        // Text - section_2_subtitle
+        if (!acf_get_field('section_2_subtitle')) {
+            $section_2_subtitle = 'Look, a cute puppy';
+        }
+        else {
+            $section_2_subtitle = get_field('section_2_subtitle');
+            if ($section_2_subtitle == null) {
+                $section_2_subtitle = '';
+            }
+        }
+
+        // Text - section_2_paragraph
+        if (!acf_get_field('section_2_paragraph')) {
+            $section_2_paragraph = "Here on POISON we know that cute small animals go viral and get the youth's attention. Take a good look at the dog here and think carefully if you emphatize with this company. We are so cool and quirky hehe uwu. Go right now to that form and buy the damn posion already. We are running out od ideas to trick you people into buying our product.";
+        }
+        else {
+            $section_2_paragraph = get_field('section_2_paragraph');
+            if ($section_2_paragraph == null) {
+                $section_2_paragraph = '';
+            }
+        }
+        
+        // Image - section_2_image
+        if (!acf_get_field('section_2_image')) {
+            $style_section_2_image = '';
+        }
+        else {
+            $section_2_image = get_field('section_2_image');
+            if ($section_2_image == null) {
+                $style_section_2_image = '';
+            }
+            else {
+                $style_section_2_image = 'background-image: url(' . $section_2_image . ');';
+            }
+        }
+        
+        
+        /*****************************************************************************/
+        /** SECTION 3 **/
+        /*****************************************************************************/
+
+        // Text - section_3_index
+        if (!acf_get_field('section_3_index')) {
+            $section_3_index = '02 - 05';
+        }
+        else {
+            $section_3_index = get_field('section_3_index');
+            if ($section_3_index == null) {
+                $section_3_index = '';
+            }
+        }
+
+        // Text - section_3_title_1
+        if (!acf_get_field('section_3_title_1')) {
+            $section_3_title_1 = 'Our';
+        }
+        else {
+            $section_3_title_1 = get_field('section_3_title_1');
+            if ($section_3_title_1 == null) {
+                $section_3_title_1 = '';
+            }
+        }
+
+        // Text - section_3_title_2
+        if (!acf_get_field('section_3_title_2')) {
+            $section_3_title_2 = 'Flavours';
+        }
+        else {
+            $section_3_title_2 = get_field('section_3_title_2');
+            if ($section_3_title_2 == null) {
+                $section_3_title_2 = '';
+            }
+        }
     ?>
 
     <!------------------------------------------------------------------------>
@@ -210,23 +332,23 @@
             <!-- Title -->
             <div class="title-section">
                 <div class="line-mesh bg-tertiary-1 animate-slide-right"></div>
-                <div class="index-section animate-slide-right">03 - 05</div>
-                <div class="title-section-1 animate-slide-right">Cruelty free</div>
-                <div class="title-section-2 animate-slide-right">Development</div>
+                <div class="index-section animate-slide-right"><?php echo $section_2_index;?></div>
+                <div class="title-section-1 animate-slide-right"><?php echo $section_2_title_1;?></div>
+                <div class="title-section-2 animate-slide-right"><?php echo $section_2_title_2;?></div>
             </div>
             <!-- Text -->
-            <div class="explanation">Except for the human subjects...</div>
+            <div class="explanation"><?php echo $section_2_explanation;?></div>
             <!-- Container -->
             <div class="container-body row justify-content-space-between align-items-center">
                 <!-- Container Body Left -->
                 <div class="container-body-left">
                     <!-- Title -->
-                    <div class="subtitle"> Look, a cute puppy</div>
+                    <div class="subtitle"><?php echo $section_2_subtitle;?></div>
                     <!-- Text -->
-                    <p>Here on POISON we know that cute small animals go viral and get the youth's attention. Take a good look at the dog here and think carefully if you emphatize with this company. We are so cool and quirky hehe uwu. Go right now to that form and buy the damn posion already. We are running out od ideas to trick you people into buying our product.</p>
+                    <p><?php echo $section_2_paragraph;?></p>
                 </div>
                 <!-- Container Body Right -->
-                <div class="img-dolphin container-body-right animate-slide-left"></div>
+                <div class="img-dolphin container-body-right animate-slide-left" <?php echo $style_section_2_image;?>></div>
             </div>
         </div>
     </div>
@@ -240,9 +362,9 @@
             <!-- Title -->
             <div class="title-section">
                 <div class="line-mesh bg-tertiary-2 animate-slide-left"></div>
-                <div class="index-section animate-slide-left">02 - 05</div>
-                <div class="title-section-1 animate-slide-left">Our</div>
-                <div class="title-section-2 animate-slide-left">Flavours</div>
+                <div class="index-section animate-slide-left"><?php echo $section_3_index;?></div>
+                <div class="title-section-1 animate-slide-left"><?php echo $section_3_title_1;?></div>
+                <div class="title-section-2 animate-slide-left"><?php echo $section_3_title_2;?></div>
             </div>
             <!-- Card Container -->
             <div id="card-container" class="card-container">
