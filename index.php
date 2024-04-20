@@ -25,9 +25,9 @@
     <div id="section1" class="section bg-primary column align-items-center">
         <!-- Logo -->
         <div class="logo">
-            <div class="logo-1"><?php the_field('logo_text');?></div>
-            <div class="logo-2"><?php the_field('logo_text');?></div>
-            <div class="logo-3"><?php the_field('logo_text');?></div>
+            <div class="logo-1" style="color: <?php the_field('logo_primary_color');?>"><?php the_field('logo_text');?></div>
+            <div class="logo-2" style="-webkit-text-stroke: 0.4px <?php the_field('logo_secondary_color');?>"><?php the_field('logo_text');?></div>
+            <div class="logo-3" style="-webkit-text-stroke: 0.1px <?php the_field('logo_tertiary_color');?>"><?php the_field('logo_text');?></div>
         </div>
         <!-- Container -->
         <div class="container row justify-content-center">
