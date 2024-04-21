@@ -195,11 +195,13 @@ function adjustMasonry() {
                 let isDown = false;
                 let startX;
                 let scrollLeft;
+                let isLoading = false;
                 
                 container.addEventListener('mousedown', (event) => {
                     isDown = true;
                     startX = event.pageX - container.offsetLeft;
                     scrollLeft = container.scrollLeft;
+                    isLoading = false;
                 });
                 container.addEventListener('mouseleave', () => {
                     isDown = false;
@@ -214,6 +216,12 @@ function adjustMasonry() {
                     const walk = x - startX;
                     container.scrollLeft = scrollLeft - walk;
                     container.style.scrollBehavior = 'auto';
+
+                    // Check if we've reached the end of the container
+                    if (!isLoading && container.scrollLeft + container.clientWidth >= container.scrollWidth && offset < total_posts) {
+                        loadMorePosts();
+                        isLoading = true;
+                    }
                 });
                 
                 // Hidden 'load-more-posts' button
