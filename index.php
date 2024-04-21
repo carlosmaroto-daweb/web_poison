@@ -370,12 +370,16 @@
             <div id="card-container" class="card-container">
 
                 <?php
+                    // Define the query arguments
+                    $posts_per_page = 12;
                     $args = array(
-                        'posts_per_page' => 5,
+                        'posts_per_page' => $posts_per_page,
                         'post_type'      => array('post')
                     );
+                    // Perform the query
                     $latest_posts = new WP_Query($args);
 
+                    // Check if there are posts
                     if($latest_posts->have_posts()):
                         while($latest_posts->have_posts()):
                             $latest_posts->the_post();
@@ -400,17 +404,22 @@
                                     echo '</div>';
                                 echo '</a>';
                             echo '</div>';
-                            
                         endwhile;
+
+                        // Displays the button if the number of published posts is greater than posts_per_page
+                        if (wp_count_posts()->publish > $posts_per_page) {
+                            echo '<div id="load-more-posts" class="button">';
+                                echo '<div class="text">Load More</div>';
+                            echo '</div>';
+                        }
+
+                        // Reset post data
                         wp_reset_postdata();
                     else:
+                        // Display message if no posts
                         echo 'No posts published yet...';
                     endif;
                 ?>
-
-            </div>
-            <div id="load-more-posts" class="button">
-                <div class="text">Load More</div>
             </div>
         </div>
     </div>

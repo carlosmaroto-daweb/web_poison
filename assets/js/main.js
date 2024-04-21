@@ -173,10 +173,14 @@ function adjustMasonry() {
     }
 }
 
-var offset = 5;
+var posts_per_page = 12;
+var offset = posts_per_page;
 document.getElementById('load-more-posts').addEventListener('click', function() {
 
+    // Define the URL for the AJAX request
     var ajaxurl = 'https://sidn.infinityfreeapp.com/wp-admin/admin-ajax.php';
+
+    // Make a fetch request to the defined URL
     fetch(ajaxurl, {
         method: 'POST',
         headers: {
@@ -184,17 +188,26 @@ document.getElementById('load-more-posts').addEventListener('click', function() 
         },
         body: 'action=load_more_posts&offset=' + offset
     })
+    // Process the response as JSON
     .then(function(response) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.text();
+        return response.json();
     })
+    // Once the JSON data is received, perform actions with it
     .then(function(data) {
-        document.getElementById('card-container').insertAdjacentHTML('beforeend', data);
+        // Insert the received posts data into the HTML element with the id 'card-container'
+        document.getElementById('card-container').insertAdjacentHTML('beforeend', data.posts);
+        // Call functions to manage animations and adjust masonry layout
         manageAnimations();
         adjustMasonry();
-        offset += 5;
+        // Increment the offset by posts_per_page
+        offset += posts_per_page;
+        // If the offset exceeds or equals the total number of posts, hide the 'load-more-posts' button
+        if (offset >= data.total_posts) {
+            document.getElementById('load-more-posts').style.display = 'none';
+        }
     })
     .catch(function(error) {
         console.error('There was a problem with the fetch operation:', error);
