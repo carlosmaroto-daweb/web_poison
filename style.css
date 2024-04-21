@@ -804,6 +804,17 @@ a {
     margin-left: 10px;
 }
 
+#section3 .button {
+    margin-bottom: 30px;
+    margin-left: calc(50% - 130px);
+    cursor: pointer;
+}
+
+#section3 .button .text {
+    color: var(--background-secondary-color-2);
+}
+
+
 /*****************************************************************************/
 /** FOOTER **/
 /*****************************************************************************/

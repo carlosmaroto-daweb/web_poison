@@ -172,3 +172,31 @@ function adjustMasonry() {
         }
     }
 }
+
+var offset = 5;
+document.getElementById('load-more-posts').addEventListener('click', function() {
+
+    var ajaxurl = 'https://sidn.infinityfreeapp.com/wp-admin/admin-ajax.php';
+    fetch(ajaxurl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'action=load_more_posts&offset=' + offset
+    })
+    .then(function(response) {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(function(data) {
+        document.getElementById('card-container').insertAdjacentHTML('beforeend', data);
+        manageAnimations();
+        adjustMasonry();
+        offset += 5;
+    })
+    .catch(function(error) {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+});

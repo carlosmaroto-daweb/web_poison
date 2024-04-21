@@ -409,6 +409,9 @@
                 ?>
 
             </div>
+            <div id="load-more-posts" class="button">
+                <div class="text">Load More</div>
+            </div>
         </div>
     </div>
 
