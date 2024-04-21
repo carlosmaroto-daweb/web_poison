@@ -58,7 +58,7 @@
                         echo '<div class="title">' . get_the_title() . '</div>';
                     echo '</div>';
                     echo '<!-- Text -->';
-                    echo '<p>' . the_content() . '</p>';
+                    echo '<p>' . get_the_content() . '</p>';
                     echo '<!-- Button -->';
                     echo '<a href="' . get_the_permalink() . '" class="card-button">';
                         echo '<div class="row align-items-center">';
@@ -75,6 +75,8 @@
         else:
             echo 'No posts published yet...';
         endif;
+
+        die();
     }
     add_action('wp_ajax_load_more_posts', 'load_more_posts');
     add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
