@@ -405,6 +405,7 @@
                                 echo '</a>';
                             echo '</div>';
                         endwhile;
+                        echo '</div>';
 
                         // Displays the button if the number of published posts is greater than posts_per_page
                         if (wp_count_posts()->publish > $posts_per_page) {
@@ -418,9 +419,9 @@
                     else:
                         // Display message if no posts
                         echo 'No posts published yet...';
+                        echo '</div>';
                     endif;
                 ?>
-            </div>
         </div>
     </div>
 
