@@ -34,6 +34,18 @@
     /*****************************************************************************/
 
     /*
+     *  Function to return total_posts and posts_per_page
+     */
+    function get_info_posts() {
+        $response = array();
+        $response['total_posts'] = wp_count_posts()->publish;
+        $response['posts_per_page'] = 12;
+        wp_send_json($response);
+    }
+    add_action('wp_ajax_get_info_posts', 'get_info_posts');
+    add_action('wp_ajax_nopriv_get_info_posts', 'get_info_posts');
+
+    /*
      *  Function to load more posts via AJAX
      */
     function load_more_posts() {
@@ -86,7 +98,6 @@
         // Response
         $response = array();
         $response['posts'] = $msg;
-        $response['total_posts'] = wp_count_posts()->publish;
         wp_send_json($response);
     }
     add_action('wp_ajax_load_more_posts', 'load_more_posts');

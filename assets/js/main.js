@@ -2,6 +2,7 @@
 /** EVENTS **/
 /*****************************************************************************/
 
+window.addEventListener('load', getInfoPosts);
 window.addEventListener('load', manageAnimations);
 window.addEventListener('load', showScroll);
 window.addEventListener('load', adjustMasonry);
@@ -10,8 +11,50 @@ window.addEventListener('scroll', showScroll);
 window.addEventListener('resize', adjustMasonry);
 
 /*****************************************************************************/
+/** VARIABLES **/
+/*****************************************************************************/
+
+var total_posts;
+var posts_per_page;
+var offset;
+
+/*****************************************************************************/
 /** FUNCTIONS **/
 /*****************************************************************************/
+
+/*
+*  Function to get total_posts and posts_per_page
+*/
+function getInfoPosts () {
+
+    // Define the URL for the AJAX request
+    var ajaxurl = 'https://sidn.infinityfreeapp.com/wp-admin/admin-ajax.php';
+
+    // Make a fetch request to the defined URL
+    fetch(ajaxurl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'action=get_info_posts'
+    })
+    // Process the response as JSON
+    .then(function(response) {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    // Once the JSON data is received, perform actions with it
+    .then(function(data) {
+        total_posts = data.total_posts;
+        posts_per_page = data.posts_per_page;
+        offset = posts_per_page;
+    })
+    .catch(function(error) {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+}
 
 /**
  * Checks if an element is in the visible area of the browser's viewport.
@@ -142,6 +185,10 @@ function adjustMasonry() {
                         }
                     }
                 }
+                // Show 'load-more-posts' button if current offset is less than total posts
+                if (offset < total_posts) {
+                    document.getElementById('load-more-posts').style.display = 'block';
+                }
             }
             else {
                 // Enable horizontal scrolling of the container using mouse events
@@ -168,14 +215,21 @@ function adjustMasonry() {
                     container.scrollLeft = scrollLeft - walk;
                     container.style.scrollBehavior = 'auto';
                 });
+                
+                // Hidden 'load-more-posts' button
+                document.getElementById('load-more-posts').style.display = 'none';
             }
         }
     }
 }
 
-var posts_per_page = 12;
-var offset = posts_per_page;
-document.getElementById('load-more-posts').addEventListener('click', function() {
+
+let button_load_more_posts = document.getElementById('load-more-posts');
+if (button_load_more_posts) {
+    button_load_more_posts.addEventListener('click', loadMorePosts);
+}
+
+function loadMorePosts () {
 
     // Define the URL for the AJAX request
     var ajaxurl = 'https://sidn.infinityfreeapp.com/wp-admin/admin-ajax.php';
@@ -205,11 +259,11 @@ document.getElementById('load-more-posts').addEventListener('click', function() 
         // Increment the offset by posts_per_page
         offset += posts_per_page;
         // If the offset exceeds or equals the total number of posts, hide the 'load-more-posts' button
-        if (offset >= data.total_posts) {
+        if (offset >= total_posts) {
             document.getElementById('load-more-posts').style.display = 'none';
         }
     })
     .catch(function(error) {
         console.error('There was a problem with the fetch operation:', error);
     });
-});
+}
