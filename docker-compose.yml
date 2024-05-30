@@ -1,0 +1,49 @@
+version: "3.1"
+services:
+  db:
+    container_name: mysql_wordpress
+    build: 
+      context: .
+      dockerfile: Dockerfile_db
+    ports: 
+      - "9001:3306"
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - persistent:/var/lib/mysql
+    networks:
+      - default
+  wordpress:
+    container_name: wordpress
+    build: 
+      context: .
+      dockerfile: Dockerfile_wordpress
+    #volumes:
+    #  - ./wordpress_files:/var/www/html/
+    ports: 
+      - "8004:80"
+    links:
+      - db
+    networks:
+      - default
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: admin
+      WORDPRESS_DB_NAME: wordpress
+  phpmyadmin:
+    container_name: phpmyadmin_wordpress
+    image: phpmyadmin/phpmyadmin
+    links: 
+      - db:db
+    ports:
+      - 8005:80
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+volumes:
+  persistent:
