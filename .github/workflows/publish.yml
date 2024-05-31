@@ -75,7 +75,7 @@ jobs:
                   ports: 
                     - "$PORT_1:80"
                   environment:
-                    WORDPRESS_DB_HOST: db:3306
+                    WORDPRESS_DB_HOST: $DOCKER_CONTAINER_1:3306
                     WORDPRESS_DB_USER: admin
                     WORDPRESS_DB_PASSWORD: admin
                     WORDPRESS_DB_NAME: wordpress
@@ -85,7 +85,7 @@ jobs:
                   container_name: $DOCKER_CONTAINER_3
                   image: phpmyadmin/phpmyadmin
                   links: 
-                    - db:db
+                    - $DOCKER_CONTAINER_1:db
                   ports:
                     - $PORT_2:80
                   environment:
