@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   db:
-    container_name: mysql_wordpress
+    container_name: mysql_wordpress_poison
     build: 
       context: .
       dockerfile: Dockerfile_db
@@ -13,11 +13,10 @@ services:
       MYSQL_PASSWORD: admin
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - persistent:/var/lib/mysql
-    networks:
-      - default
+      - poison_db_data:/var/lib/mysql
+    mem_limit: 512m
   wordpress:
-    container_name: wordpress
+    container_name: wordpress_poison
     build: 
       context: .
       dockerfile: Dockerfile_wordpress
@@ -25,17 +24,15 @@ services:
     #  - ./wordpress_files:/var/www/html/
     ports: 
       - "8004:80"
-    links:
-      - db
-    networks:
-      - default
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: admin
       WORDPRESS_DB_PASSWORD: admin
       WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - poison_wordpress_data:/var/www/html
   phpmyadmin:
-    container_name: phpmyadmin_wordpress
+    container_name: phpmyadmin_wordpress_poison
     image: phpmyadmin/phpmyadmin
     links: 
       - db:db
@@ -46,4 +43,5 @@ services:
       MYSQL_PASSWORD: admin
       MYSQL_ROOT_PASSWORD: root
 volumes:
-  persistent:
+  poison_db_data:
+  poison_wordpress_data:

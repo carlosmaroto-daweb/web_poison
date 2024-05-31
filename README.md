@@ -15,7 +15,7 @@ Para acceder al admin área de WordPress, dirígete a: [phpMyAdmin](https://www.
 
 ## Acceso a la Base de Datos
 
-Para acceder a la base de datos a través de phpMyAdmin, dirígete a: [phpMyAdmin](https://www.carlosmaroto-daweb.com/poison/phpmyadmin/).
+Para acceder a la base de datos a través de phpMyAdmin, dirígete a: [phpMyAdmin](https://www.carlosmaroto-daweb.com/poison-phpmyadmin/).
 
 - **Usuario Admin**: admin
 - **Contraseña**: admin
