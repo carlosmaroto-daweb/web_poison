@@ -56,7 +56,7 @@ jobs:
             sudo echo '
               version: "3.1"
               services:
-                db:
+                $DOCKER_CONTAINER_1:
                   container_name: $DOCKER_CONTAINER_1
                   image: ghcr.io/carlosmaroto-daweb/$DOCKER_IMAGE_1
                   ports: 
@@ -69,7 +69,7 @@ jobs:
                   volumes:
                     - $DOCKER_VOLUME_1:/var/lib/mysql
                   mem_limit: 512m
-                wordpress:
+                $DOCKER_CONTAINER_2:
                   container_name: $DOCKER_CONTAINER_2
                   image: ghcr.io/carlosmaroto-daweb/$DOCKER_IMAGE_2
                   ports: 
@@ -81,7 +81,7 @@ jobs:
                     WORDPRESS_DB_NAME: wordpress
                   volumes:
                     - $DOCKER_VOLUME_2:/var/www/html
-                phpmyadmin:
+                $DOCKER_CONTAINER_3:
                   container_name: $DOCKER_CONTAINER_3
                   image: phpmyadmin/phpmyadmin
                   links: 
