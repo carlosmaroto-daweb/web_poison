@@ -96,7 +96,9 @@ jobs:
                 $DOCKER_VOLUME_1:
                 $DOCKER_VOLUME_2:
             ' >> docker-compose.yml
-            sudo docker compose down
+            sudo docker stop $DOCKER_CONTAINER_1 && sudo docker rm $DOCKER_CONTAINER_1
+            sudo docker stop $DOCKER_CONTAINER_2 && sudo docker rm $DOCKER_CONTAINER_2
+            sudo docker stop $DOCKER_CONTAINER_3 && sudo docker rm $DOCKER_CONTAINER_3
             sudo docker volume rm $(sudo docker volume ls -q | grep "$DOCKER_VOLUME_1")
             sudo docker volume rm $(sudo docker volume ls -q | grep "$DOCKER_VOLUME_2")
             sudo docker login ghcr.io -u carlosmaroto-daweb -p ${{ secrets.TOKEN_CD }}
