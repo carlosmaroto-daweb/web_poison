@@ -28,6 +28,7 @@ Para acceder a la base de datos a través de phpMyAdmin, dirígete a: [phpMyAdmi
 - HTML
 - CSS
 - JavaScript
+- Programación Orientada a Objetos (PDOO) en JavaScript
 - AJAX
 - MySQL
 - phpMyAdmin
