@@ -10,7 +10,7 @@ Explora nuestra plataforma ahora mismo y descubre el encanto de Poison. Visita n
 
 Para acceder al admin área de WordPress, dirígete a: [phpMyAdmin](https://www.carlosmaroto-daweb.com/poison/wp-admin/).
 
-- **Usuario Admin**: admin
+- **Usuario Admin**: admin 
 - **Contraseña**: admin
 
 ## Acceso a la Base de Datos
