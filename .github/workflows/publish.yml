@@ -105,6 +105,7 @@ jobs:
                 $DOCKER_VOLUME_2:
             ' >> docker-compose.yml
             sudo docker compose up -d
+            sudo docker compose stop
             sudo rm docker-compose.yml
             sudo bash update_nginx_config.sh $NGINX_LOCATION_1 $NGINX_CONF_FILE $PORT_1
             sudo bash update_nginx_config.sh $NGINX_LOCATION_2 $NGINX_CONF_FILE $PORT_2
