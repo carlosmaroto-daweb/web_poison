@@ -42,7 +42,7 @@ jobs:
 
       - name: Build image
         run: |
-          sudo sed -i 's#.*$OLD_DOMAIN.*#$NEW_DOMAIN#g' $SQL_DUMP_FILE
+          sudo sed -i "s#.*$OLD_DOMAIN.*#$NEW_DOMAIN#g" $SQL_DUMP_FILE
           docker build -f $DOCKER_FILE_1 --tag ghcr.io/carlosmaroto-daweb/$DOCKER_IMAGE_1 .
           docker push ghcr.io/carlosmaroto-daweb/$DOCKER_IMAGE_1
           docker build -f $DOCKER_FILE_2 --tag ghcr.io/carlosmaroto-daweb/$DOCKER_IMAGE_2 .
