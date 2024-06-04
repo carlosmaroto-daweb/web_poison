@@ -3537,7 +3537,7 @@ function get_site_url( $blog_id = null, $path = '', $scheme = null ) {
  *                       'http' or 'https' can be passed to force those schemes.
  * @return string Admin URL link with optional path appended.
  */
-function admin_url( $path = '/poison/', $scheme = 'admin' ) {
+function admin_url( $path = '', $scheme = 'admin' ) {
 	return get_admin_url( null, $path, $scheme );
 }
 
