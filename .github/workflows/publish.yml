@@ -14,9 +14,9 @@ env:
   DOCKER_IMAGE_2: poison-wordpress:latest
   DOCKER_FILE_1: Dockerfile_db
   DOCKER_FILE_2: Dockerfile_wordpress
-  DOCKER_CONTAINER_1: mysql_wordpress_poison
+  DOCKER_CONTAINER_1: mysql_poison
   DOCKER_CONTAINER_2: wordpress_poison
-  DOCKER_CONTAINER_3: phpmyadmin_wordpress_poison
+  DOCKER_CONTAINER_3: phpmyadmin_poison
   DOCKER_VOLUME_1: poison_db_data
   DOCKER_VOLUME_2: poison_wordpress_data
   PORT_1: 8004
