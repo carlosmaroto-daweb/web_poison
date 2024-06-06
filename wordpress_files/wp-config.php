@@ -122,6 +122,9 @@ if ($configExtra = getenv_docker('WORDPRESS_CONFIG_EXTRA', '')) {
 	eval($configExtra);
 }
 
+define('WP_ADMIN_DIR', 'poison/wp-admin');
+define('ADMIN_COOKIE_PATH', SITECOOKIEPATH . WP_ADMIN_DIR);
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
