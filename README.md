@@ -1,39 +1,38 @@
-# Poison
+# Poison 
 
 ¡Bienvenido a Poison, donde la creatividad y la originalidad se combinan para ofrecerte una experiencia única en la web!
 
 ## Demostración
 
-Explora nuestra plataforma ahora mismo y descubre el encanto de Poison. Visita nuestra demostración en vivo [aquí](https://www.carlosmaroto-daweb.com/poison/).
+Explora nuestra plataforma ahora mismo y descubre el encanto de Poison. Visita nuestra demostración en vivo [aquí](https://poison.carlosmaroto-daweb.com).
 
-## Acceso al Admin Área
+### Acceso al Admin Área
 
-Para acceder al admin área de WordPress, dirígete a: [Admin Área](https://www.carlosmaroto-daweb.com/poison/wp-admin/).
-
-- **Usuario Admin**: admin
-- **Contraseña**: admin
-
-## Acceso a la Base de Datos
-
-Para acceder a la base de datos a través de phpMyAdmin, dirígete a: [phpMyAdmin](https://www.carlosmaroto-daweb.com/poison-phpmyadmin/).
+Para acceder al admin área de WordPress, dirígete [aquí](https://poison.carlosmaroto-daweb.com/wp-admin).
 
 - **Usuario Admin**: admin
 - **Contraseña**: admin
 
-### Tecnologías Utilizadas
+### Acceso a la Base de Datos
 
-- WordPress
+Para acceder a la base de datos a través de phpMyAdmin, dirígete [aquí](https://poison.carlosmaroto-daweb.com/phpmyadmin).
+
+- **Usuario Admin**: admin
+- **Contraseña**: admin
+
+## Tecnologías Utilizadas
+
 - Creación Tema WordPress
 - Uso de plugin Advanced Custom Fields
 - HTML
 - CSS
 - JavaScript
-- Programación Orientada a Objetos (PDOO) en JavaScript
+- Programación Orientada a Objetos (PDOO)
 - AJAX
 - MySQL
 - phpMyAdmin
 - Docker para contenerización
-- Docker Compose
+- Docker Compose para despliegue en local
 - Implementación continua y entrega continua (CI/CD) con GitHub Actions
 - Proxy inverso Nginx
 - Uso de EC2 de AWS para alojamiento
@@ -46,7 +45,7 @@ Se han creado entradas para la sección de tarjetas en la página principal, ofr
 
 El uso del plugin Advanced Custom Fields ha facilitado la personalización del contenido del tema, permitiendo modificar los valores predeterminados desde el área de administración de WordPress.
 
-## Características Principales
+### Características Principales
 
 - **Diseño Original**: El tema de Poison ha sido diseñado desde cero, priorizando la originalidad y la creatividad en cada detalle.
 - **Compatibilidad con WordPress**: Aunque inicialmente desarrollado como un tema independiente, Poison se ha adaptado para ser compatible con WordPress, permitiendo una gestión más eficiente del contenido.

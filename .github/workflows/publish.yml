@@ -7,8 +7,8 @@ on:
     branches: ["main"]
 
 env:
-  OLD_DOMAIN: http://localhost:8004
-  NEW_DOMAIN: https://www.carlosmaroto-daweb.com/poison
+  OLD_DOMAIN: http://localhost:8003
+  NEW_DOMAIN: https://poison.carlosmaroto-daweb.com
   SQL_DUMP_FILE: dump/wordpress.sql
   DOCKER_IMAGE_1: poison-db:latest
   DOCKER_IMAGE_2: poison-wordpress:latest
@@ -19,12 +19,10 @@ env:
   DOCKER_CONTAINER_3: phpmyadmin_poison
   DOCKER_VOLUME_1: poison_db_data
   DOCKER_VOLUME_2: poison_wordpress_data
-  PORT_1: 8004
-  PORT_2: 8005
-  PORT_3: 9001
-  NGINX_LOCATION_1: /poison/
-  NGINX_LOCATION_2: /poison-phpmyadmin/
-  NGINX_CONF_FILE: /etc/nginx/sites-available/default
+  PORT_1: 8003
+  PORT_2: 8004
+  PORT_3: 9000
+  SUBDOMAIN: poison.carlosmaroto-daweb.com
 
 jobs:
   create-docker-images:
@@ -111,6 +109,38 @@ jobs:
             sudo docker compose up -d
             sudo docker compose stop
             sudo rm docker-compose.yml
-            sudo bash update_nginx_config.sh $NGINX_LOCATION_1 $NGINX_CONF_FILE $PORT_1
-            sudo bash update_nginx_config.sh $NGINX_LOCATION_2 $NGINX_CONF_FILE $PORT_2
+            sudo systemctl stop nginx
+            if [ ! -f /etc/nginx/sites-available/$SUBDOMAIN ]; then
+              sudo touch /etc/nginx/sites-available/$SUBDOMAIN
+              sudo ln -s /etc/nginx/sites-available/$SUBDOMAIN /etc/nginx/sites-enabled/$SUBDOMAIN
+              sudo certbot certonly --standalone -d $SUBDOMAIN --cert-name $SUBDOMAIN --non-interactive --agree-tos --email carlosmaroto.daweb@gmail.com
+            fi
+            sudo echo '
+            server {
+              listen 443 ssl;
+              server_name $SUBDOMAIN;
+
+              ssl_certificate /etc/letsencrypt/live/$SUBDOMAIN/fullchain.pem;
+              ssl_certificate_key /etc/letsencrypt/live/$SUBDOMAIN/privkey.pem;
+
+              location / {
+                proxy_pass http://localhost:$PORT_1;
+                proxy_set_header Host \$host;
+                proxy_set_header X-Real-IP \$remote_addr;
+                proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto \$scheme;
+              }
+
+              location /phpmyadmin/ {
+                rewrite ^/phpmyadmin/(.*)$ /$1 break;
+                proxy_pass http://localhost:$PORT_2;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_redirect ~^(/.*)$ /phpmyadmin$1;
+              }
+            }' > /tmp/nginx_site_config
+            sudo mv /tmp/nginx_site_config /etc/nginx/sites-available/$SUBDOMAIN
+            sudo systemctl start nginx
           EOF
