@@ -28,7 +28,7 @@ var offset;
 function getInfoPosts () {
 
     // Define the URL for the AJAX request
-    var ajaxurl = 'https://www.carlosmaroto-daweb.com/poison/wp-admin/admin-ajax.php';
+    var ajaxurl = 'http://localhost:8003/wp-admin/admin-ajax.php';
 
     // Make a fetch request to the defined URL
     fetch(ajaxurl, {
@@ -240,7 +240,7 @@ if (button_load_more_posts) {
 function loadMorePosts () {
 
     // Define the URL for the AJAX request
-    var ajaxurl = 'https://www.carlosmaroto-daweb.com/poison/wp-admin/admin-ajax.php';
+    var ajaxurl = 'http://localhost:8003/wp-admin/admin-ajax.php';
 
     // Make a fetch request to the defined URL
     fetch(ajaxurl, {

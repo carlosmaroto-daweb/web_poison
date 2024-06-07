@@ -103,7 +103,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (3, 'blogname', 'Poison', 'yes'),
 (4, 'blogdescription', '', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
-(6, 'admin_email', 'carlosmaroto-daweb@gmail.com', 'yes'),
+(6, 'admin_email', 'carlosmaroto.daweb@gmail.com', 'yes'),
 (7, 'start_of_week', '1', 'yes'),
 (8, 'use_balanceTags', '0', 'yes'),
 (9, 'use_smilies', '1', 'yes'),
@@ -868,7 +868,7 @@ CREATE TABLE `wp_users` (
 --
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'admin', '$P$BcNK5SE3qpV/9Cbt/xgkdvuqCyzlqk0', 'admin', 'carlosmaroto-daweb@gmail.com', 'http://localhost:8003', '2024-05-30 21:43:09', '', 0, 'admin');
+(1, 'admin', '$P$BcNK5SE3qpV/9Cbt/xgkdvuqCyzlqk0', 'admin', 'carlosmaroto.daweb@gmail.com', 'http://localhost:8003', '2024-05-30 21:43:09', '', 0, 'admin');
 
 --
 -- Índices para tablas volcadas

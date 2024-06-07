@@ -10,6 +10,7 @@ env:
   OLD_DOMAIN: http://localhost:8003
   NEW_DOMAIN: https://poison.carlosmaroto-daweb.com
   SQL_DUMP_FILE: dump/wordpress.sql
+  TARGET_DIR: wordpress_files/wp-content/themes/poison
   DOCKER_IMAGE_1: poison-db:latest
   DOCKER_IMAGE_2: poison-wordpress:latest
   DOCKER_FILE_1: Dockerfile_db
@@ -41,6 +42,7 @@ jobs:
       - name: Build image
         run: |
           sed -i "s#$OLD_DOMAIN#$NEW_DOMAIN#g" $SQL_DUMP_FILE
+          find $TARGET_DIR -type f -exec sed -i "s#${OLD_DOMAIN}#${NEW_DOMAIN}#g" {} +
           docker build -f $DOCKER_FILE_1 --tag ghcr.io/carlosmaroto-daweb/$DOCKER_IMAGE_1 .
           docker push ghcr.io/carlosmaroto-daweb/$DOCKER_IMAGE_1
           docker build -f $DOCKER_FILE_2 --tag ghcr.io/carlosmaroto-daweb/$DOCKER_IMAGE_2 .
